@@ -1,6 +1,6 @@
 define(['angular'], (angular) => {
   angular
-    .module('customerForm', []);
+    .module('customerForm', [])
     .controller('customerFormController', ['$http', ($http) => {
       this.save = () => $http.post('api/customers', {
         name: this.userForm.name,
@@ -11,5 +11,17 @@ define(['angular'], (angular) => {
       .failure((data) => {
         this.failureMessage = data;
       });
-    }]);
+    }])
+    .directive('customerForm', () => ({
+      restrict: 'E',
+      scope: {},
+      bindToController: {},
+      controller: 'customerFormController',
+      controllerAs: 'formController',
+      template: [
+        '<div>',
+        'HERE',
+        '</div>',
+      ].join(''),
+    }));
 });
