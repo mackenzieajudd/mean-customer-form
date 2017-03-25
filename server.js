@@ -6,7 +6,7 @@ const app = express();
 
 mongoose.connect('mongodb://localhost/customerform');
 
-app.use(express.static('/Public'));
+app.use(express.static('/public'));
 app.use(bodyParser.urlencoded({ extended: 'true' }));
 app.use(bodyParser.json());
 
