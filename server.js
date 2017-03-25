@@ -1,12 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 
 mongoose.connect('mongodb://localhost/customerform');
 
-app.use(express.static('/public'));
+app.use(express.static('.'));
 app.use(bodyParser.urlencoded({ extended: 'true' }));
 app.use(bodyParser.json());
 
@@ -45,3 +46,5 @@ app.delete('/api/customers/:customer_id', (req, res) => {
     return res.send(customer);
   });
 });
+
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, './index.html')));
