@@ -7,7 +7,7 @@ const app = express();
 
 mongoose.connect('mongodb://localhost/customerform');
 
-app.use(express.static('.'));
+app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: 'true' }));
 app.use(bodyParser.json());
 
@@ -47,4 +47,4 @@ app.delete('/api/customers/:customer_id', (req, res) => {
   });
 });
 
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, './index.html')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));

@@ -1,27 +1,27 @@
-define(['angular'], (angular) => {
+define(['angular'], function (angular) {
   angular
     .module('customerForm', [])
-    .controller('customerFormController', ['$http', ($http) => {
-      this.save = () => $http.post('api/customers', {
-        name: this.userForm.name,
-        email: this.userForm.email,
-        company: this.userForm.company,
-      })
-      .success(data => data)
-      .failure((data) => {
-        this.failureMessage = data;
-      });
+    .controller('customerFormController', ['$http', function ($http) {
+      this.save = function () {
+        $http.post('api/customers', {
+          name: this.userForm.name,
+          email: this.userForm.email,
+          company: this.userForm.company,
+        });
+      };
     }])
-    .directive('customerForm', () => ({
-      restrict: 'E',
-      scope: {},
-      bindToController: {},
-      controller: 'customerFormController',
-      controllerAs: 'formController',
-      template: [
-        '<div>',
-        'HERE',
-        '</div>',
-      ].join(''),
-    }));
+    .directive('customerForm', function () {
+      return {
+        restrict: 'E',
+        scope: {},
+        bindToController: {},
+        controller: 'customerFormController',
+        controllerAs: 'formController',
+        template: [
+          '<div>',
+          'HERE',
+          '</div>',
+        ].join(''),
+      };
+    });
 });
