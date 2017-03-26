@@ -1,4 +1,4 @@
-define(['angular', 'text!customerForm.html'], function (angular, customerFormHtml) {
+define(['angular', 'text!customerForm.html', 'css!bootstrap/css/bootstrap.css', 'css!../css/main.css'], function (angular, customerFormHtml) {
   angular
     .module('customerForm', [])
     .controller('customerFormController', ['$http', function ($http) {
