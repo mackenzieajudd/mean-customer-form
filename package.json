@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf rm public/*.js;",
-    "dist": "npm run clean; copyfiles -f node_modules/requirejs/require.js public; cd src;../node_modules/requirejs/bin/r.js -o baseUrl=. name=app out=../public/dist.js mainConfigFile=app.js;",
+    "dist": "npm run clean; copyfiles -f node_modules/requirejs/require.js public; cd src;node ../node_modules/requirejs/bin/r.js -o baseUrl=. name=app out=../public/dist.min.js mainConfigFile=app.js;",
     "serve": "npm run dist; node server.js"
   },
   "author": "",

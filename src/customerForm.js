@@ -24,4 +24,6 @@ define(['angular'], function (angular) {
         ].join(''),
       };
     });
+
+  angular.bootstrap(document, ['customerForm']);
 });
