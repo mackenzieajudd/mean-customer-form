@@ -15,7 +15,8 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.1",
-    "requirejs": "^2.3.3"
+    "requirejs": "^2.3.3",
+    "text": "requirejs/text"
   },
   "devDependencies": {
     "eslint": "^3.18.0",

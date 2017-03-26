@@ -1,12 +1,12 @@
-define(['angular'], function (angular) {
+define(['angular', '../node_modules/text/text!customerForm.html'], function (angular, customerFormHtml) {
   angular
     .module('customerForm', [])
     .controller('customerFormController', ['$http', function ($http) {
       this.save = function () {
         $http.post('api/customers', {
-          name: this.userForm.name,
-          email: this.userForm.email,
-          company: this.userForm.company,
+          name: this.name,
+          email: this.email,
+          company: this.company,
         });
       };
     }])
@@ -17,11 +17,7 @@ define(['angular'], function (angular) {
         bindToController: {},
         controller: 'customerFormController',
         controllerAs: 'formController',
-        template: [
-          '<div>',
-          'HERE',
-          '</div>',
-        ].join(''),
+        template: customerFormHtml,
       };
     });
 
