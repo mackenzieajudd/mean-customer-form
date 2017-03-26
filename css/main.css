@@ -1,0 +1,13 @@
+.customer-form label {
+  font-weight: bold;
+  text-align: right;
+  width: 100%;
+}
+
+.customer-form {
+  padding-top: 100px;
+}
+
+.customer-form .row{
+  padding-top: 20px;
+}
