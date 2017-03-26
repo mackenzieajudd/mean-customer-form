@@ -1,4 +1,4 @@
-define(['angular', '../node_modules/text/text!customerForm.html'], function (angular, customerFormHtml) {
+define(['angular', 'text!customerForm.html'], function (angular, customerFormHtml) {
   angular
     .module('customerForm', [])
     .controller('customerFormController', ['$http', function ($http) {
