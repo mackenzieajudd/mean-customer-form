@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf rm public/*.js;",
+    "clean": "rimraf rmdir public;",
     "dist": "npm run clean; copyfiles -f node_modules/requirejs/require.js index.html public; cd src;node ../node_modules/requirejs/bin/r.js -o baseUrl=. name=app out=../public/dist.min.js mainConfigFile=app.js;",
     "serve": "npm run dist; node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.3",
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
@@ -21,6 +22,7 @@
     "text": "requirejs/text"
   },
   "devDependencies": {
+    "copyfiles": "^1.2.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
